@@ -10,9 +10,9 @@ export default {
   data() {
     return {
       form: {
-        firstName: "",
-        lastName: "",
+        name: "",
         email: "",
+        subject: "",
         message: "",
       },
       isSubmitting: false,
@@ -29,9 +29,9 @@ export default {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            first_name: this.form.firstName,
-            last_name: this.form.lastName,
+            name: this.form.name,
             email: this.form.email,
+            subject: this.form.subject,
             message: this.form.message,
           }),
         });
@@ -47,7 +47,7 @@ export default {
           timeout: 3000,
         });
 
-        this.form = { firstName: "", lastName: "", email: "", message: "" };
+        this.form = { name: "", email: "", subject: "", message: "" };
       } catch (error) {
         this.toast.error(error.message || "Something went wrong. Please try again.", {
           position: "top-right",
@@ -67,18 +67,18 @@ export default {
     <form @submit.prevent="handleSubmit">
       <div class="form-group-name">
         <div>
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" v-model="form.firstName" required />
+          <label for="name">First Name</label>
+          <input type="text" id="name" v-model="form.name" required />
         </div>
         <div>
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" v-model="form.lastName" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" v-model="form.email" required />
         </div>
       </div>
 
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" v-model="form.email" required />
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" v-model="form.subject" required />
       </div>
 
       <div class="form-group">
