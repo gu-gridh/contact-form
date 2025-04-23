@@ -3,8 +3,10 @@ from django.urls import path, include
 from .views import *
 from rest_framework import routers
 
+# Create a router and register our viewset with it.
+router = routers.DefaultRouter()
+router.register(r'contact', ContactFormViewSet, basename='contact')
 
 urlpatterns = [
-    path('contact/', sendmail, name='contact'),
-    path('success/', success, name='success'),
+    path('', include(router.urls)),
 ]
