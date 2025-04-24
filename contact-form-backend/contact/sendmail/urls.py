@@ -5,7 +5,7 @@ from rest_framework import routers
 
 # Create a router and register our viewset with it.
 router = routers.DefaultRouter()
-router.register(r'contact', ContactFormViewSet, basename='contact')
+router.register(r'sendmail', ContactFormViewSet, basename='contact')
 
 urlpatterns = [
     path('', include(router.urls)),
