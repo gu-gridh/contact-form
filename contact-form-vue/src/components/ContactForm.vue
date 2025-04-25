@@ -23,7 +23,7 @@ export default {
       this.isSubmitting = true;
 
       try {
-        const response = await fetch("contact.dh.gu.se/sendmail/", {
+        const response = await fetch("/sendmail/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
