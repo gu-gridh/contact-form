@@ -16,9 +16,6 @@ class ContactFormViewSet(viewsets.ViewSet):
                 email = form.cleaned_data['email']
                 subject = form.cleaned_data['subject']
                 message = form.cleaned_data['message']
-                print(f"Received message from {name} ({email}): {message}")
-                print(f"Sending email to {settings.EMAIL_HOST_USER} from {email}")
-                print(f"Sending email to {settings.EMAIL_HOST_PASSWORD} from {email}")
                 send_mail(
                     f'From {name}, Subject: {subject}',
                     f'Message: {message}\n',
