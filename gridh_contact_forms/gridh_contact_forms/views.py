@@ -21,10 +21,10 @@ class ContactFormViewSet(viewsets.ViewSet):
                     f'From {name}, Subject: {subject}',
                     f'Message: {message}\n',
                     email,
-                    [settings.EMAIL_HOST_USER],
+                    [settings.EMAIL_RECIPIENT],
                     fail_silently=False,
                 )
-                print(f"Email sent to {settings.EMAIL_HOST_USER} from {email}")
+                print(f"Email sent to {settings.EMAIL_RECIPIENT} from {email}")
 
                 return Response({'message': 'Email sent successfully'}, status=status.HTTP_200_OK)
         return Response({'errors': form.errors}, status=status.HTTP_400_BAD_REQUEST)

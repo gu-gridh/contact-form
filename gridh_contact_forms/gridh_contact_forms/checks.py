@@ -14,6 +14,7 @@ def check_basic_email_settings(app_configs, **kwargs):
         getattr(settings, 'EMAIL_PORT', None),
         getattr(settings, 'EMAIL_HOST_USER', None),
         getattr(settings, 'EMAIL_HOST_PASSWORD', None),
+        getattr(settings, 'EMAIL_RECIPIENT', None),
     ]
 
     use_tls = getattr(settings, 'EMAIL_USE_TLS', False)
@@ -24,7 +25,7 @@ def check_basic_email_settings(app_configs, **kwargs):
             Error(
                 'Email settings may be incomplete or misconfigured.',
                 hint=(
-                    'Ensure EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, and '
+                    'Ensure EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_RECIPIENT and '
                     'either EMAIL_USE_TLS or EMAIL_USE_SSL are set correctly in settings.py.'
                 ),
                 id='gridh_contact_forms.E001',

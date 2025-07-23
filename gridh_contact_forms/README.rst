@@ -17,7 +17,9 @@ Quick start
         "gridh_contact_forms",
     ]
 
-2. The package uses send_mail from the Django core package. In settings also add the email configurations for your mail provider that sends the mail and where you want the mail to be sent to::
+2. Add "rest_framework" to your INSTALLED_APPS to be able to use the api endpoint.
+
+3. The package uses send_mail from the Django core package. In settings also add the email configurations for your mail provider that sends the mail. You also have to add a recipient address where you want the mail to be sent to::
 
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST = 'smtp.yourprovider.com'
@@ -25,12 +27,13 @@ Quick start
     EMAIL_USE_TLS = True
     EMAIL_HOST_USER = 'your@email.com'
     EMAIL_HOST_PASSWORD = 'yourpassword'
+    EMAIL_RECIPIENT = 'recipient@email.com'
 
-3. Include the contact URLconf in your project urls.py like this::
+4. Include the contact URLconf in your project urls.py like this::
 
     path("contact/", include("gridh_contact_forms.urls")),
 
-4. Visit the ``/contact`` URL to see the contact form.
+5. Visit the ``/contact`` URL to see the contact form.
 
 Build process
 -------------
