@@ -67,7 +67,7 @@ export default {
     <form @submit.prevent="handleSubmit">
       <div class="form-group-name">
         <div>
-          <label for="name">First Name</label>
+          <label for="name">Name</label>
           <input type="text" id="name" v-model="form.name" required />
         </div>
         <div>

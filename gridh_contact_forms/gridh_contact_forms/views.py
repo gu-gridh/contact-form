@@ -7,6 +7,7 @@ from .forms import ContactForm  # Import ContactForm
 from rest_framework.response import Response
 from rest_framework import status
 
+
 class ContactFormViewSet(viewsets.ViewSet):
     def create(self, request):
         if request.method == 'POST':

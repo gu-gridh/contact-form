@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gridh_contact_forms"
+version = "0.1"
+dependencies = [
+    "django>=5.2, <6",
+    "djangorestframework>=3.16.0, <4"
+]
+description = "A Django app to create simple contact forms for projects."
+readme = "README.rst"
+requires-python = ">= 3.12"
+authors = [
+    {name = "Aram Karimi"},
+    {name = "Julia Beck"},
+]
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 5.2",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
