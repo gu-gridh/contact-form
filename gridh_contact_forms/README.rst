@@ -17,7 +17,11 @@ Quick start
         "gridh_contact_forms",
     ]
 
-2. Add "rest_framework" to your INSTALLED_APPS to be able to use the api endpoint.
+2. Add "rest_framework" to your INSTALLED_APPS to be able to use the api endpoint. Also add "corsheaders" and the corresponding middleware "corsheaders.middleware.CorsMiddleware" to your project when you have a headless frontend on another server. Define CORS_ALLOWED_ORIGINS for your server for production environments.
+
+3. The package let's you decide if you want to go headless with frameworks like Vue or use a simple version with templates. For this you need to add the following setting depending on which one you choose::
+    
+    USE_HEADLESS_FRONTEND = True
 
 3. The package uses send_mail from the Django core package. In settings also add the email configurations for your mail provider that sends the mail. You also have to add a recipient address where you want the mail to be sent to::
 

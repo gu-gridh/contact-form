@@ -1,30 +1,34 @@
-
-
-from django.core.mail import send_mail
 from django.conf import settings
-from rest_framework import viewsets
-from .forms import ContactForm  # Import ContactForm
-from rest_framework.response import Response
-from rest_framework import status
+from django.http import HttpResponseNotFound
+from django.shortcuts import render
+from .forms import ContactForm
 
 
-class ContactFormViewSet(viewsets.ViewSet):
-    def create(self, request):
-        if request.method == 'POST':
-            form = ContactForm(request.data)
-            if form.is_valid():
-                name = form.cleaned_data['name']
-                email = form.cleaned_data['email']
-                subject = form.cleaned_data['subject']
-                message = form.cleaned_data['message']
-                send_mail(
-                    f'From {name}, Subject: {subject}',
-                    f'Message: {message}\n',
-                    email,
-                    [settings.EMAIL_RECIPIENT],
-                    fail_silently=False,
-                )
-                print(f"Email sent to {settings.EMAIL_RECIPIENT} from {email}")
+def contact_view(request):
+    """
+    /contact
+    - If headless frontend with e.g. Vue is used, return a 404
+    - If templates are used, serve Django form
+    """
+    if getattr(settings, 'USE_HEADLESS_FRONTEND', False):
+        return HttpResponseNotFound("Handled by frontend.")
 
-                return Response({'message': 'Email sent successfully'}, status=status.HTTP_200_OK)
-        return Response({'errors': form.errors}, status=status.HTTP_400_BAD_REQUEST)
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            return render(request, 'gridh_contact_forms/contact_form.html', {
+                'form': ContactForm(), 'success': True
+            })
+        return render(request, 'gridh_contact_forms/contact_form.html',
+                      {'form': form})
+
+    return render(request, 'gridh_contact_forms/contact_form.html',
+                  {'form': ContactForm()})
+
+
+def contact_template_only_view(request):
+    """
+    /pages/contact.html — always renders template version
+    """
+    form = ContactForm()
+    return render(request, 'contact_form/contact_form.html', {'form': form})

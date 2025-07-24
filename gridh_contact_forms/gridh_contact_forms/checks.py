@@ -6,7 +6,8 @@ from django.conf import settings
 def check_basic_email_settings(app_configs, **kwargs):
     errors = []
 
-    backend = getattr(settings, 'EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
+    backend = getattr(settings, 'EMAIL_BACKEND',
+                      'django.core.mail.backends.smtp.EmailBackend')
     is_smtp = 'smtp' in backend
 
     required_settings = [
@@ -25,7 +26,7 @@ def check_basic_email_settings(app_configs, **kwargs):
             Error(
                 'Email settings may be incomplete or misconfigured.',
                 hint=(
-                    'Ensure EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_RECIPIENT and '
+                    'Ensure EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER,    EMAIL_HOST_PASSWORD, EMAIL_RECIPIENT and '
                     'either EMAIL_USE_TLS or EMAIL_USE_SSL are set correctly in settings.py.'
                 ),
                 id='gridh_contact_forms.E001',

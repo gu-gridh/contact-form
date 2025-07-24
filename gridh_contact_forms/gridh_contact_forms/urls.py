@@ -1,11 +1,10 @@
-from django.urls import path, include
-from .views import ContactFormViewSet
-from rest_framework import routers
-
-# Create a router and register our viewset with it.
-router = routers.DefaultRouter()
-router.register(r'', ContactFormViewSet, basename='contact')
+from django.urls import path
+from .api.views import ContactAPIView
+from . import views
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('contact', views.contact_view, name='contact'),
+    path('api/contact/', ContactAPIView.as_view(), name='contact_api'),
+    path('pages/contact.html', views.contact_template_only_view,
+         name='contact_template'),
 ]
