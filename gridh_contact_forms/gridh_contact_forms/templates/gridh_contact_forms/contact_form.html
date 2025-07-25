@@ -1,15 +1,17 @@
 {% extends "pages/base.html" %}
 
 {% block content %}
-  <h2>Contact Us</h2>
+  <h1>Contact Us</h1>
   {% if success %}
     <p>Thank you for your message!</p>
   {% else %}
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <input type="text" name="interesting" style="display:none" autocomplete="off" />
-      <button type="submit">Submit Message</button>
-    </form>
+    <div class="form-container">
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="text" name="interesting" style="display:none" autocomplete="off" />
+        <button type="submit">Submit Message</button>
+      </form>
+    </div>
   {% endif %}
 {% endblock %}
