@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "pages/base.html" %}
 
 {% block content %}
   <h2>Contact Us</h2>
@@ -9,7 +9,7 @@
       {% csrf_token %}
       {{ form.as_p }}
       <input type="text" name="interesting" style="display:none" autocomplete="off" />
-      <button type="submit">Send</button>
+      <button type="submit">Submit Message</button>
     </form>
   {% endif %}
 {% endblock %}

@@ -31,4 +31,5 @@ def contact_template_only_view(request):
     /pages/contact.html — always renders template version
     """
     form = ContactForm()
-    return render(request, 'contact_form/contact_form.html', {'form': form})
+    return render(request, 'gridh_contact_forms/contact_form.html',
+                  {'form': form})

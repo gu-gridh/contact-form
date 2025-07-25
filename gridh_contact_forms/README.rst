@@ -6,6 +6,7 @@ This is a small Django app for creating forms like contact forms in GRIDH's djan
 WORK_IN_PROGRESS
 
 gridh_contact_forms is a Django app to create simple contact forms for django projects. It has the Django REST framework as a dependency.
+If you use the templates, it currently works best together with gridh_pages. If you don't want to use those you can just overwrite the template file gridh_contact_forms/contact_form.html and use it with your own templates instead.
 
 Quick start
 -----------
