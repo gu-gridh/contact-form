@@ -86,6 +86,9 @@ export default {
         <textarea id="message" v-model="form.message" required></textarea>
       </div>
 
+      <!-- TODO: add honeypot here:
+       input type="text" name="interesting" style="display:none" autocomplete="off" -->
+
       <button type="submit" :disabled="isSubmitting">
         {{ isSubmitting ? "Sending..." : "Send Message" }}
       </button>
