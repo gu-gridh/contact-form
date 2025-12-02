@@ -1,12 +1,6 @@
-from django.contrib import admin
-from django.urls import path, include
-from .views import *
-from rest_framework import routers
-
-# Create a router and register our viewset with it.
-router = routers.DefaultRouter()
-router.register(r'sendmail', ContactFormViewSet, basename='contact')
+from django.urls import path
+from .views import contact_form_view
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', contact_form_view, name='contact_form'),
 ]

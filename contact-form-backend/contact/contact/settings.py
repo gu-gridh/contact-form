@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 from .settings_local import *
 from django.utils.translation import gettext_lazy as _
 
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'contact.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(str(BASE_DIR)), 'templates'],  # Ensure your templates directory is listed here
+        'DIRS': [BASE_DIR / 'templates'],  # Ensure your templates directory is listed here
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
