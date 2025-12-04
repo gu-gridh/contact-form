@@ -34,3 +34,12 @@ class ContactForm(forms.Form):
             'rows': 5
         })
     )
+
+     # Simple spam protection
+    interesting = forms.CharField(required=False, widget=forms.HiddenInput)
+
+    def clean_interesting(self):
+        value = self.cleaned_data.get("interesting")
+        if value:
+            raise forms.ValidationError("Spam detected.")
+        return value
