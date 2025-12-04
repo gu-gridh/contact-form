@@ -1,0 +1,7 @@
+<nav role="navigation">
+    <ul>
+      {% for nav_url in nav_urls %}
+        <li><a href="{{ nav_url.url }}">{{ nav_url.label }}</a></li>
+      {% endfor %}
+    </ul>
+</nav>
