@@ -1,15 +1,26 @@
-* {
+:root {
+    --font-color: #333;
+    --background-color: #fff;
+    --contrast-color: #007BFF;
+    --footer-color: #222;
+    --error-color: #721c24;
+    --success-color: #155724;
+    --grey: #ccc;
+}
+
+html {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-    }
+}
 
-    body {
-        font-family: "Barlow Condensed", "Segoe UI", Arial, system-ui, -apple-system, sans-serif;
-        background-color: #ffffff;
-        color: #333;
-        line-height: 1.6;
-    }
+body {
+    font-family: "Barlow Condensed", "Segoe UI", Arial, system-ui, -apple-system, sans-serif;
+    background-color: var(--background-color);
+    color: var(--font-color);
+    margin: 0;
+    line-height: 1.6;
+}
 
     .contact-form {
         max-width: 400px;
@@ -19,7 +30,7 @@
 
     h1 {
         margin-bottom: 20px;
-        color: #333;
+        color: var(--font-color);
         font-size: 1.8rem;
     }
 
@@ -36,13 +47,13 @@
 
     .message.success {
         background-color: #d4edda;
-        color: #155724;
+        color: var(--success-color);
         border: 1px solid #c3e6cb;
     }
 
     .message.error {
         background-color: #f8d7da;
-        color: #721c24;
+        color: var(--error-color);
         border: 1px solid #f5c6cb;
     }
 
@@ -54,7 +65,7 @@
         display: block;
         margin-bottom: 5px;
         font-weight: 500;
-        color: #333;
+        color: var(--font-color);
         font-size: 0.95rem;
     }
 
@@ -63,10 +74,10 @@
     textarea {
         width: 100%;
         padding: 8px;
-        border: 1px solid #ccc;
+        border: 1px solid var(--grey);
         border-radius: 4px;
         background-color: #f9f9f9;
-        color: #333;
+        color: var(--font-color);
         font-family: Arial, sans-serif;
         font-size: 0.95rem;
         transition: border-color 0.2s ease;
@@ -76,8 +87,8 @@
     input[type="email"]:focus,
     textarea:focus {
         outline: none;
-        border-color: #007BFF;
-        background-color: #fff;
+        border-color: var(--contrast-color);
+        background-color: var(--background-color);
     }
 
     textarea {
@@ -87,7 +98,7 @@
 
     .errorlist {
         list-style: none;
-        color: #721c24;
+        color: var(--error-color);
         background-color: #f8d7da;
         border: 1px solid #f5c6cb;
         border-radius: 4px;
@@ -103,8 +114,8 @@
     button[type="submit"] {
         width: 100%;
         padding: 12px;
-        background-color: #007BFF;
-        color: #fff;
+        background-color: var(--contrast-color);
+        color: var(--background-color);
         font-weight: bold;
         font-size: 1rem;
         border: none;
@@ -115,7 +126,7 @@
     }
 
     button[type="submit"]:hover:not(:disabled) {
-        background-color: #0056b3;
+        background-color: var(--contrast-color);
         transform: translateY(-1px);
     }
 
@@ -124,7 +135,7 @@
     }
 
     button[type="submit"]:disabled {
-        background-color: #ccc;
+        background-color: var(--grey);
         cursor: not-allowed;
         opacity: 0.6;
     }
@@ -147,8 +158,8 @@
 
     footer {
         display: block;
-        background-color: #222;
-        color: #fff;
+        background-color: var(--footer-color);
+        color: var(--background-color);
         line-height: 1;
         min-height: 82px;
         width: 100%;
@@ -178,7 +189,7 @@
     
     footer a,
     footer a:visited {
-        color: #fff;
+        color: var(--background-color);
         padding: 0 .5em;
         margin-left: 0;
         text-decoration: none
@@ -195,7 +206,7 @@
     }
     
     div.partners a:not(:first-of-type) {
-        border-left: 1px solid #ccc
+        border-left: 1px solid var(--grey);
     }
     
     footer a.icon {
