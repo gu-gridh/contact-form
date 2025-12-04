@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="contact-form">
-        <h1>Contact Us</h1>
+        <h1>Kontakta oss</h1>
 
         {% if messages %}
         <div class="messages">
@@ -17,7 +17,7 @@
         <form method="post" action="{% url 'contact_form' %}">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Send Message</button>
+            <button type="submit">Skicka</button>
         </form>
     </div>
 
