@@ -15,7 +15,7 @@ def render_footer():
 
 @register.inclusion_tag('navigation.html')
 def render_navigation():
-    project_info = getattr(settings, 'PAGES_PROJECT_INFO', {})
+    project_info = getattr(settings, 'PROJECT_INFO', {})
     return {'nav_urls': project_info.get('NAV_URLS', [])}
 
 
