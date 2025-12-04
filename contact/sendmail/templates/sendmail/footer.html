@@ -1,0 +1,16 @@
+<footer>
+    <div class="footer-content">
+      <div class="link-grid">
+        {% for link in links %}
+          <div>
+            <a class="icon {{ link.type }}" href="{{ link.url }}">{{ link.label }}</a>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="partners">
+        {% for partner in partners %}
+          <a href="{{ partner.url }}">{{ partner.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+</footer>
