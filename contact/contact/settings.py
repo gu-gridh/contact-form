@@ -24,14 +24,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 APPEND_SLASH = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'contact.dh.gu.se']
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
-    "http://localhost:5173",
-]
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,7 +35,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'sendmail',
-    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +54,7 @@ ROOT_URLCONF = 'contact.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # Ensure your templates directory is listed here
+        'DIRS': [BASE_DIR / 'sendmail' / 'templates' / 'sendmail'],  # Ensure your templates directory is listed here
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,9 +115,3 @@ STATICFILES_FINDERS = (
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
-REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS': 'contact.schemas.ContactFormSchema',
-}
