@@ -4,7 +4,7 @@ from django.core.validators import EmailValidator
 
 class ContactForm(forms.Form):
     name = forms.CharField(
-        label="Name",
+        label="Namn",
         max_length=100,
         required=True,
         widget=forms.TextInput(attrs={
@@ -13,7 +13,7 @@ class ContactForm(forms.Form):
         })
     )
     email = forms.EmailField(
-        label="Email",
+        label="E-post",
         required=True,
         widget=forms.EmailInput(attrs={
             'placeholder': '',
@@ -21,7 +21,7 @@ class ContactForm(forms.Form):
         })
     )
     subject = forms.CharField(
-        label="Subject",
+        label="Ämne",
         max_length=100,
         required=True,
         widget=forms.TextInput(attrs={
@@ -30,7 +30,7 @@ class ContactForm(forms.Form):
         })
     )
     message = forms.CharField(
-        label="Message",
+        label="Meddelande",
         required=True,
         widget=forms.Textarea(attrs={
             'placeholder': '',

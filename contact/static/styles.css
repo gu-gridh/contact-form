@@ -275,6 +275,21 @@ body {
         font-size: 2rem;
     }
 
+    @media screen {
+
+        nav ul .sub-nav-toggle:after,
+        nav ul [aria-haspopup=true]:after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "";
+            font-size: 14px;
+            float: right;
+            transition-property: transform;
+            transition: .5s ease;
+            display: inline-block
+        }
+    }
+
     a.site-title, a.site-title:link, a.site-title:visited, a.site-title:active, a.site-title:hover, .sub-nav-toggle:after{
         text-decoration: none;
         margin-left:0px;
