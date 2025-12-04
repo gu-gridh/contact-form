@@ -226,6 +226,24 @@ body {
         background: url(https://data.dh.gu.se/ui-icons/arrow_link_white_circle.png) no-repeat center
     }
 
+    nav ul {
+        margin: 0.5rem 0 1.5rem 0;
+        width: 100%;
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    nav ul li a {
+        color: var(--font-color);
+        font-weight: 700;
+    }
+    
+    nav ul li a:hover {
+        opacity: .8;
+    }
+
     /* didoc custom */
     @media screen {
         header {
