@@ -6,6 +6,7 @@ from django.conf import settings
 from django.contrib import messages
 from .forms import ContactForm
 
+
 def contact_form_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -14,7 +15,7 @@ def contact_form_view(request):
             email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
             message_text = form.cleaned_data['message']
-            
+
             try:
                 send_mail(
                     f'From {name}, Subject: {subject}',
@@ -33,5 +34,5 @@ def contact_form_view(request):
             messages.error(request, 'Please correct the errors below.')
     else:
         form = ContactForm()
-    
+
     return render(request, 'sendmail/contact_form.html', {'form': form})
