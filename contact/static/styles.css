@@ -264,6 +264,18 @@ body {
         }
     }
 
+    nav ul {
+        padding-left: 20px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #646464;
+        font-family: var(--title-type);
+        font-weight: 500;
+        font-size: 2rem;
+    }
+
     a.site-title, a.site-title:link, a.site-title:visited, a.site-title:active, a.site-title:hover, .sub-nav-toggle:after{
         text-decoration: none;
         margin-left:0px;
