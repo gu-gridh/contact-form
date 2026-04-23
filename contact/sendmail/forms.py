@@ -39,7 +39,7 @@ class ContactForm(forms.Form):
         })
     )
 
-     # Simple spam protection
+    # Simple spam protection
     interesting = forms.CharField(required=False, widget=forms.HiddenInput)
 
     def clean_interesting(self):
